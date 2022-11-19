@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="resources/css/style.css" />
+    <link rel="stylesheet" href="resources/css/loading.css" />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"
+      integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    />
+    <title>The Weeknd</title>
+  </head>
+
+  <body>
+    <div class="loading"><div class="lds-facebook"><div></div><div></div><div></div></div></div>
+
+    <div class="container">
+      <div class="logo">
+        <h2>NICOLAS</h2>
+      </div>
+      <video class="bg-video" src="./resources/media/video/The Weeknd - Call Out My Name (Official Video).mp4"></video>
+      <div class="stroke">
+        <h1>THE WEEKND</h1>
+      </div>
+      
+      <div class="text">
+        <h1>THE WEEKND</h1>
+      </div>
+      <div class="play">
+        <i id="icon" class="fa-regular fa-circle-play"></i>
+        <p class="music-text">Click to play music</p>
+      </div>
+
+      <div class="box">
+        
+        <img class="weeknd" src="./resources/media/img/TheWeeknd.png" alt="">
+        <img class="weeknd-bg" src="./resources/media/img/TheWeeknd.png" alt="">
+       
+      </div>
+      <audio class="music" src="./resources/media/audio/The Weeknd - Call Out My Name (Official Video) (128 kbps).mp3" style="visibility:hidden"></audio>
+      
+     
+    </div>
+
+    <script src="resources/js/main.js"></script>
+    <script>
+      const play = document.querySelector('.play')
+      const bgvideo = document.querySelector('.bg-video')
+      const text = document.querySelector('.music-text')
+      const music = document.querySelector('.music')
+      let icon = document.querySelector('#icon')
+
+      let i = 2
+      play.addEventListener('click',()=>{
+        if (i %2 ==0){
+      
+          bgvideo.play()
+          icon.className = "fa-regular fa-circle-pause"
+        console.log("asdsd")
+          i++
+        }else{
+          bgvideo.pause()
+          icon.className = "fa-regular fa-circle-play"
+          i++
+        }
+        text.textContent = "Call out my Name"
+        
+      })
+
+    </script>
+  </body>
+</html>
