@@ -3,7 +3,7 @@ const play = document.querySelector('.play')
       const text = document.querySelector('.music-text')
       const music = document.querySelector('.music')
       let icon = document.querySelector('#icon')
-
+      let songTime = document.querySelector('.time')
 
       const list = document.querySelector('.list')
       const list2 = document.querySelector('.list2')
@@ -26,6 +26,7 @@ const play = document.querySelector('.play')
 
      let song_title = "Call out my Name"
      song1.addEventListener('click',()=>{
+        text.textContent = "Click to play music"
         bgvideo.src = songs[0]
         song_title = song1.textContent
         
@@ -36,6 +37,7 @@ const play = document.querySelector('.play')
     })
 
     song2.addEventListener('click',()=>{
+        text.textContent = "Click to play music"
         bgvideo.src = songs[1]
         song_title = song2.textContent
         song1.style.color = "white"
@@ -45,6 +47,7 @@ const play = document.querySelector('.play')
     })
 
     song3.addEventListener('click',()=>{
+        text.textContent = "Click to play music"
         bgvideo.src = songs[2]
         song_title = song3.textContent
         song1.style.color = "white"
@@ -54,6 +57,7 @@ const play = document.querySelector('.play')
     })
 
     song4.addEventListener('click',()=>{
+        text.textContent = "Click to play music"
         bgvideo.src = songs[3]
         song_title = song4.textContent
         song1.style.color = "white"
@@ -91,7 +95,29 @@ const play = document.querySelector('.play')
         text.textContent = song_title
       })
 
+      function formatTime(seconds) {
+        minutes = Math.floor(seconds / 60);
+        minutes = (minutes >= 10) ? minutes : "0" + minutes;
+        seconds = Math.floor(seconds % 60);
+        seconds = (seconds >= 10) ? seconds : "0" + seconds;
+        return minutes + ":" + seconds;
+      }
+      bgvideo.addEventListener("timeupdate",()=>{
+        let seconds = Math.floor(bgvideo.currentTime)
+        minutes = Math.floor(seconds / 60);
+        minutes = (minutes >= 10) ? minutes : "0" + minutes;
+        seconds = Math.floor(seconds % 60);
+        seconds = (seconds >= 10) ? seconds : "0" + seconds;
+        songTime.textContent =  minutes + ":" + seconds;
+      })
+
+
       bgvideo.addEventListener("ended",()=>{
-        icon.className = "fa-regular fa-circle-pause"
+        list.style.opacity = "100"
+        list.style.pointerEvents = "all"
+        list2.style.opacity = "100"
+        icon.className = "fa-regular fa-circle-play"
         text.textContent = "Click to play music"
       })
+
+

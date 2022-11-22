@@ -112,11 +112,17 @@ body{
     left: 0;
     transform: translateY(8vh)  translateX(28vw);
 }
-.play div {
+.play-con {
     display: flex;
     align-items: center;
     gap: 20px;
-  
+}
+.text-contents{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 0;
 }
 .play i{
     font-size: 4rem;
@@ -124,7 +130,11 @@ body{
     cursor: pointer;
 }
 .play p{
+    margin:0;
     font-size: 2rem;
+}
+.play span{
+    margin: 0;
 }
 
 
@@ -245,8 +255,8 @@ body{
     .text h1{
         font-size:5rem
     }
-    .play div{
-        gap: 1rem;
+    .play-con {
+        gap: .6rem;
     }
     .play i{
         font-size: 3rem;
@@ -255,6 +265,9 @@ body{
     }
     .play p{
         font-size: 1.4rem;
+    }
+    .play span{
+        font-size: .7rem;
     }
 
     .box{
