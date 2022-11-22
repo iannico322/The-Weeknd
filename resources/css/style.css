@@ -21,33 +21,38 @@ body{
     align-items: center;
     justify-content: center;
     background-color: rgb(46, 46, 46);
-    width: 100%;
+    width: 100vw;
     height: 100vh;
 }
+
 .container{
     display: flex;
     height: 100vh;
     overflow: hidden;
     flex-direction: column;
     background-color: rgb(0, 0, 0);
-
 }
 
+
+.text-con{
+    display: flex;
+    height: 100vh;
+    flex-direction:column;
+    justify-content: flex-start;
+
+}
+.big-text{
+    min-height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
 .stroke{
     position: absolute;
     display: flex;
     z-index: 2;
-    height: 100vh;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-}
-
-.text{
-    position: absolute;
-    display: flex;
-    z-index: 0;
-    height: 100vh;
     justify-content: center;
     flex-direction: column;
     align-items: center;
@@ -59,58 +64,94 @@ body{
   -webkit-text-stroke-color: rgb(255, 255, 255);
     font-size: 15rem;
     font-weight: 400;
+    margin: 0;
   
+}
+
+.list{
+    display: flex;
+    align-self: flex-start;
+    background-color: rgba(185, 14, 14, 0.812);
+    height: 6vh;
+    
+}
+.list ul{
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
+.list ul li{
+    cursor: pointer;
+    font-size: 1rem;
+    border-left: 1px solid rgba(255, 255, 255, 0.219);
+    padding: 3px;
+    padding-left: 20px;
+    font-weight: 500;
+    color: rgb(244, 244, 244);
+}
+
+.list ul li:hover{
+    color: rgb(203, 203, 203);
 }
 .text h1{
     font-family: 'airstrike';
     font-size: 15rem;
     font-weight: 400;
+    margin: 0;
 }
-
 .play{
-    bottom: 0;
-    margin-left: 30%;
-    margin-bottom: 10%;
-    position: absolute;
-    z-index: 2;
+    z-index: 4;
     display: flex;
-
+    align-self: flex-start;
+    justify-content: center;
+    height: 100px;
+    left: 0;
+    transform: translateY(8vh)  translateX(28vw);
+}
+.play div {
+    display: flex;
     align-items: center;
     gap: 20px;
-    cursor: pointer;
-
-
+  
 }
 .play i{
-    font-size: 5rem;
+    font-size: 4rem;
+    color: rgb(226, 226, 226);
+    cursor: pointer;
 }
 .play p{
-    cursor: pointer;
     font-size: 2rem;
 }
-.box{
 
+
+
+
+
+.box{
     display: flex;
-    justify-content: flex-end;
+    justify-content: flex-start;
     flex-direction: row;
+    position: absolute;
+    right: 0;
 
 }
-.box h1{
-    align-self: flex-start;
-    position: absolute;
+.image{
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+   
 }
 .weeknd{
     z-index: 0;
-    right: 0;
     height: 100vh;
     filter: blur(100px);
+    pointer-events: none;
 }
 .weeknd-bg{
     position: absolute;
     z-index: 0;
-    right: 0;
-    
     height: 100vh;
+    pointer-events: none;
 }
 .logo{
     position: absolute;
@@ -126,120 +167,111 @@ body{
     color: rgb(148, 148, 148);
 }
 .bg-video{
+    pointer-events: none;
+    opacity: 0;
+    transition: 600ms ease-in-out;
     z-index: 0;
     position: absolute;
     height: 100vh;
     width: 100%;
     object-fit: cover;
-    filter: blur(10px);
+    filter: blur(0px);
     -webkit-mask-image:-webkit-gradient(linear,right top, left top,  from(rgba(0, 0, 0, 0.517)), to(rgba(255, 17, 17, 0))); 
  
 }
 
-@media (max-width: 1046px) {
-    body{
-        width: 100%;
-        height: 100vh;
-        overflow: hidden;
-    }
-    .container{
-        width: 100%;
-        height: 100vh;
-        overflow: hidden;
-        
-    }
-    .logo h2{
-        font-size: 1rem;
-    }
+@media (max-width: 1513px) {
     .play{
-        transform: translateY(-300px);
-        align-items: center;
-    
-        gap: 10px;
+        transform: translateY(8vh)  translateX(5vw);
     }
-    .play i{
-        font-size: 3rem;
-    }
-    .play p{
-        cursor: pointer;
-        font-size: 1.3rem;
-    }
+}
+
+@media (max-width: 1046px) {
     .stroke h1{
-        margin-top: -15rem;
-        font-size: 10.5rem;
+        font-size: 13rem;
     }
     .text h1{
-        margin-top: -15rem;
-        font-size: 10.5rem;
-    }
-    .weeknd{
-        transform: translateX(15rem);
-        height: 90vh;
-    }
-    .weeknd-bg{
-        transform: translateX(15rem);
-        height: 90vh;
-
-    }
-    .box{
-        position: relative;
-        display: flex;
-
-        transform: translateY(20%);
-       
+        font-size: 13rem;
     }
 
 }
-@media (max-width: 600px) {
-    body{
-        width: 100%;
+
+@media (max-width: 939px) {
+    .box{
         height: 100vh;
-        overflow: hidden;
-    }
-    .container{
-        width: 100%;
-        height: 100vh;
-        overflow: hidden;
-        
-    }
-    .logo h2{
-        font-size: 1rem;
-    }
-    .play{
-        transform: translateY(-260px);
-        align-items: center;
-    
-        gap: 7px;
-    }
-    .play i{
-        font-size: 2.4rem;
-    }
-    .play p{
-        cursor: pointer;
-        font-size: 1.3rem;
-    }
-    .stroke h1{
-        margin-top: -5rem;
-        font-size: 5.5rem;
-    }
-    .text h1{
-        margin-top: -5rem;
-        font-size: 5.5rem;
+        right: 0;
     }
     .weeknd{
-        transform: translateX(15rem);
-        height: 70vh;
+        height:70vh;
+  
     }
     .weeknd-bg{
-        transform: translateX(15rem);
-        height: 70vh;
+        height:70vh;
+    
 
     }
+
+}
+@media (max-width: 877px) {
+    .stroke h1{
+        font-size:10rem
+    }
+    .text h1{
+        font-size:10rem
+    }
+}
+
+@media (max-width: 687px) {
+    .stroke h1{
+        font-size:8rem
+    }
+    .text h1{
+        font-size:8rem
+    }
+    .logo h2{
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 667px) {
+
+    .stroke h1{
+        font-size:5rem
+    }
+    .text h1{
+        font-size:5rem
+    }
+    .play div{
+        gap: 1rem;
+    }
+    .play i{
+        font-size: 3rem;
+        color: rgb(226, 226, 226);
+        cursor: pointer;
+    }
+    .play p{
+        font-size: 1.4rem;
+    }
+
     .box{
-        position: relative;
-        display: flex;
-
-        transform: translateY(50%);
-       
+        height: 100vh;
+        overflow: hidden;
+        right: 0;
     }
-  }
+    .image{
+        transform: translateX(30%);
+    }
+    .weeknd{
+        height:70vh;
+  
+    }
+    .weeknd-bg{
+        height:70vh;
+    
+
+    }
+    .logo h2{
+        font-size: 1.2rem;
+    }
+    
+}
